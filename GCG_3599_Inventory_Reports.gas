@@ -1,0 +1,1544 @@
+Program.Sub.ScreenSU.Start
+gui.Form1..create
+gui.Form1..caption("Inventory Reports")
+gui.Form1..size(7035,10440)
+gui.Form1..position(0,0)
+gui.Form1..event(unload,Unload)
+gui.Form1..alwaysontop(False)
+gui.Form1..fontname("Arial")
+gui.Form1..fontsize(8)
+gui.Form1..forecolor(0)
+gui.Form1..fontstyle(,,,,)
+gui.Form1..BackColor(-2147483633)
+gui.Form1..controlbox(True)
+gui.Form1..maxbutton(True)
+gui.Form1..minbutton(True)
+gui.Form1..mousepointer(0)
+gui.Form1..moveable(True)
+gui.Form1..sizeable(True)
+gui.Form1..ShowInTaskBar(True)
+gui.Form1..titlebar(True)
+gui.Form1.frame1.create(frame)
+gui.Form1.frame1.caption("Report Options")
+gui.Form1.frame1.size(6450,2130)
+gui.Form1.frame1.position(200,170)
+gui.Form1.frame1.visible(True)
+gui.Form1.frame1.fontname("Arial")
+gui.Form1.frame1.fontsize(8)
+gui.Form1.frame2.create(frame)
+gui.Form1.frame2.caption("Data Selection Criteria")
+gui.Form1.frame2.size(6450,7005)
+gui.Form1.frame2.position(200,2290)
+gui.Form1.frame2.visible(True)
+gui.Form1.frame2.fontname("Arial")
+gui.Form1.frame2.fontsize(8)
+gui.Form1.ddlRptType.create(dropdownlist)
+gui.Form1.ddlRptType.visible(True)
+gui.Form1.ddlRptType.size(3780,330)
+gui.Form1.ddlRptType.zorder(0)
+gui.Form1.ddlRptType.position(345,625)
+gui.Form1.ddlRptType.enabled(True)
+gui.Form1.ddlRptType.parent("frame1")
+gui.Form1.ddlRptType.fontname("Arial")
+gui.Form1.ddlRptType.fontsize(8)
+gui.Form1.chkExCost.create(checkbox)
+gui.Form1.chkExCost.caption("Exclude Cost")
+gui.Form1.chkExCost.visible(True)
+gui.Form1.chkExCost.size(1935,255)
+gui.Form1.chkExCost.zorder(0)
+gui.Form1.chkExCost.position(345,1120)
+gui.Form1.chkExCost.enabled(True)
+gui.Form1.chkExCost.alignment(0)
+gui.Form1.chkExCost.parent("frame1")
+gui.Form1.chkExCost.fontname("Arial")
+gui.Form1.chkExCost.fontsize(8)
+gui.Form1.chkExZ.create(checkbox)
+gui.Form1.chkExZ.caption("Exclude Z Inventory")
+gui.Form1.chkExZ.visible(True)
+gui.Form1.chkExZ.size(1935,255)
+gui.Form1.chkExZ.zorder(0)
+gui.Form1.chkExZ.position(4445,1525)
+gui.Form1.chkExZ.enabled(True)
+gui.Form1.chkExZ.alignment(0)
+gui.Form1.chkExZ.parent("frame1")
+gui.Form1.chkExZ.fontname("Arial")
+gui.Form1.chkExZ.fontsize(8)
+gui.Form1.chkExCC.create(checkbox)
+gui.Form1.chkExCC.caption("Exclude CC Inventory")
+gui.Form1.chkExCC.visible(True)
+gui.Form1.chkExCC.size(1935,255)
+gui.Form1.chkExCC.zorder(0)
+gui.Form1.chkExCC.position(2425,1525)
+gui.Form1.chkExCC.enabled(True)
+gui.Form1.chkExCC.alignment(0)
+gui.Form1.chkExCC.parent("frame1")
+gui.Form1.chkExCC.fontname("Arial")
+gui.Form1.chkExCC.fontsize(8)
+gui.Form1.chkExWIH.create(checkbox)
+gui.Form1.chkExWIH.caption("Exclude WIH Inventory")
+gui.Form1.chkExWIH.visible(True)
+gui.Form1.chkExWIH.size(1935,255)
+gui.Form1.chkExWIH.zorder(0)
+gui.Form1.chkExWIH.position(345,1525)
+gui.Form1.chkExWIH.enabled(True)
+gui.Form1.chkExWIH.alignment(0)
+gui.Form1.chkExWIH.parent("frame1")
+gui.Form1.chkExWIH.fontname("Arial")
+gui.Form1.chkExWIH.fontsize(8)
+gui.Form1.lbl1.create(label,"Vendor Range",True,1935,255,1,345,5425,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl1.parent("frame2")
+gui.Form1.txtBegVndr.create(textbox,"",True,2090,300,0,345,5670,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtBegVndr.parent("frame2")
+gui.Form1.txtEndVndr.create(textbox,"",True,2090,300,0,3605,5670,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtEndVndr.parent("frame2")
+gui.Form1.cmdBegVndr.create(button)
+gui.Form1.cmdBegVndr.caption("^")
+gui.Form1.cmdBegVndr.visible(True)
+gui.Form1.cmdBegVndr.size(255,300)
+gui.Form1.cmdBegVndr.zorder(0)
+gui.Form1.cmdBegVndr.position(2435,5670)
+gui.Form1.cmdBegVndr.enabled(True)
+gui.Form1.cmdBegVndr.parent("frame2")
+gui.Form1.cmdBegVndr.fontname("Arial")
+gui.Form1.cmdBegVndr.fontsize(8)
+gui.Form1.cmdBegVndr.event(click,cmdvndr_click)
+gui.Form1.cmdEndVndr.create(button)
+gui.Form1.cmdEndVndr.caption("^")
+gui.Form1.cmdEndVndr.visible(True)
+gui.Form1.cmdEndVndr.size(255,300)
+gui.Form1.cmdEndVndr.zorder(0)
+gui.Form1.cmdEndVndr.position(5735,5670)
+gui.Form1.cmdEndVndr.enabled(True)
+gui.Form1.cmdEndVndr.parent("frame2")
+gui.Form1.cmdEndVndr.fontname("Arial")
+gui.Form1.cmdEndVndr.fontsize(8)
+gui.Form1.cmdEndVndr.event(click,cmdvndr_click)
+gui.Form1.lbl2.create(label,"Through",True,930,315,1,2700,5670,True,2,Arial,8,-2147483633,0)
+gui.Form1.lbl2.parent("frame2")
+gui.Form1.optPart.create(option)
+gui.Form1.optPart.caption("Part")
+gui.Form1.optPart.visible(True)
+gui.Form1.optPart.size(660,255)
+gui.Form1.optPart.zorder(0)
+gui.Form1.optPart.position(345,1905)
+gui.Form1.optPart.enabled(True)
+gui.Form1.optPart.alignment(0)
+gui.Form1.optPart.parent("frame2")
+gui.Form1.optPart.fontname("Arial")
+gui.Form1.optPart.fontsize(8)
+gui.Form1.optDescr.create(option)
+gui.Form1.optDescr.caption("Description")
+gui.Form1.optDescr.visible(True)
+gui.Form1.optDescr.size(1155,255)
+gui.Form1.optDescr.zorder(0)
+gui.Form1.optDescr.position(1280,1905)
+gui.Form1.optDescr.enabled(True)
+gui.Form1.optDescr.alignment(0)
+gui.Form1.optDescr.parent("frame2")
+gui.Form1.optDescr.fontname("Arial")
+gui.Form1.optDescr.fontsize(8)
+gui.Form1.lbl3.create(label,"Part Range",True,930,255,1,345,1620,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl3.parent("frame2")
+gui.Form1.txtEndPart.create(textbox,"",True,2090,300,0,3605,2290,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtEndPart.parent("frame2")
+gui.Form1.txtBegPart.create(textbox,"",True,2090,300,0,345,2290,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtBegPart.parent("frame2")
+gui.Form1.cmdEndPrt.create(button)
+gui.Form1.cmdEndPrt.caption("^")
+gui.Form1.cmdEndPrt.visible(True)
+gui.Form1.cmdEndPrt.size(255,300)
+gui.Form1.cmdEndPrt.zorder(0)
+gui.Form1.cmdEndPrt.position(5735,2290)
+gui.Form1.cmdEndPrt.enabled(True)
+gui.Form1.cmdEndPrt.parent("frame2")
+gui.Form1.cmdEndPrt.fontname("Arial")
+gui.Form1.cmdEndPrt.fontsize(8)
+gui.Form1.cmdEndPrt.event(click,cmdprt_click)
+gui.Form1.cmdBegPrt.create(button)
+gui.Form1.cmdBegPrt.caption("^")
+gui.Form1.cmdBegPrt.visible(True)
+gui.Form1.cmdBegPrt.size(255,300)
+gui.Form1.cmdBegPrt.zorder(0)
+gui.Form1.cmdBegPrt.position(2435,2290)
+gui.Form1.cmdBegPrt.enabled(True)
+gui.Form1.cmdBegPrt.parent("frame2")
+gui.Form1.cmdBegPrt.fontname("Arial")
+gui.Form1.cmdBegPrt.fontsize(8)
+gui.Form1.cmdBegPrt.event(click,cmdprt_click)
+gui.Form1.lbl4.create(label,"Through",True,930,255,1,2700,2290,True,2,Arial,8,-2147483633,0)
+gui.Form1.lbl4.parent("frame2")
+gui.Form1.lbl5.create(label,"Purchase Date Range",True,2115,255,1,345,405,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl5.parent("frame2")
+gui.Form1.dtpBegDate.create(datepicker)
+gui.Form1.dtpBegDate.visible(True)
+gui.Form1.dtpBegDate.size(2250,300)
+gui.Form1.dtpBegDate.zorder(0)
+gui.Form1.dtpBegDate.position(345,650)
+gui.Form1.dtpBegDate.enabled(True)
+gui.Form1.dtpBegDate.parent("frame2")
+gui.Form1.dtpBegDate.event(change,dtpbegdate_change)
+gui.Form1.dtpBegDate.checkbox(False)
+gui.Form1.dtpEndDate.create(datepicker)
+gui.Form1.dtpEndDate.visible(True)
+gui.Form1.dtpEndDate.size(2250,300)
+gui.Form1.dtpEndDate.zorder(0)
+gui.Form1.dtpEndDate.position(3605,650)
+gui.Form1.dtpEndDate.enabled(True)
+gui.Form1.dtpEndDate.parent("frame2")
+gui.Form1.dtpEndDate.checkbox(False)
+gui.Form1.lbl6.create(label,"Through",True,930,255,1,2700,650,True,2,Arial,8,-2147483633,0)
+gui.Form1.lbl6.parent("frame2")
+gui.Form1.lbl7.create(label,"Width Criteria",True,1020,255,1,345,6185,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl7.parent("frame2")
+gui.Form1.ddlWidh.create(dropdownlist)
+gui.Form1.ddlWidh.visible(True)
+gui.Form1.ddlWidh.size(1035,330)
+gui.Form1.ddlWidh.zorder(0)
+gui.Form1.ddlWidh.position(345,6410)
+gui.Form1.ddlWidh.enabled(True)
+gui.Form1.ddlWidh.parent("frame2")
+gui.Form1.ddlWidh.fontname("Arial")
+gui.Form1.ddlWidh.fontsize(8)
+gui.Form1.txtWidth.create(textbox,"",True,1200,300,0,1550,6410,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtWidth.parent("frame2")
+gui.Form1.lbl8.create(label,"Width (in Inches)",True,1275,255,1,1550,6185,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl8.parent("frame2")
+gui.Form1.lbl9.create(label,"Length Criteria",True,1125,255,1,3605,6185,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl9.parent("frame2")
+gui.Form1.lbl10.create(label,"Length (in Inches)",True,1365,255,1,4750,6185,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl10.parent("frame2")
+gui.Form1.ddlLength.create(dropdownlist)
+gui.Form1.ddlLength.visible(True)
+gui.Form1.ddlLength.size(1035,330)
+gui.Form1.ddlLength.zorder(0)
+gui.Form1.ddlLength.position(3605,6410)
+gui.Form1.ddlLength.enabled(True)
+gui.Form1.ddlLength.parent("frame2")
+gui.Form1.ddlLength.fontname("Arial")
+gui.Form1.ddlLength.fontsize(8)
+gui.Form1.txtLength.create(textbox,"",True,1200,300,0,4765,6410,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtLength.parent("frame2")
+gui.Form1.lbl11.create(label,"Product Line Range",True,1935,255,1,345,2925,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl11.parent("frame2")
+gui.Form1.txtEndPL.create(textbox,"",True,2090,300,0,3605,3155,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtEndPL.parent("frame2")
+gui.Form1.txtBegPL.create(textbox,"",True,2090,300,0,345,3155,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtBegPL.parent("frame2")
+gui.Form1.lbl12.create(label,"Through",True,930,255,1,2700,3155,True,2,Arial,8,-2147483633,0)
+gui.Form1.lbl12.parent("frame2")
+gui.Form1.cmdEndPL.create(button)
+gui.Form1.cmdEndPL.caption("^")
+gui.Form1.cmdEndPL.visible(True)
+gui.Form1.cmdEndPL.size(255,300)
+gui.Form1.cmdEndPL.zorder(0)
+gui.Form1.cmdEndPL.position(5735,3155)
+gui.Form1.cmdEndPL.enabled(True)
+gui.Form1.cmdEndPL.parent("frame2")
+gui.Form1.cmdEndPL.fontname("Arial")
+gui.Form1.cmdEndPL.fontsize(8)
+gui.Form1.cmdEndPL.event(click,cmdpl_click)
+gui.Form1.cmdBegPL.create(button)
+gui.Form1.cmdBegPL.caption("^")
+gui.Form1.cmdBegPL.visible(True)
+gui.Form1.cmdBegPL.size(255,300)
+gui.Form1.cmdBegPL.zorder(0)
+gui.Form1.cmdBegPL.position(2435,3155)
+gui.Form1.cmdBegPL.enabled(True)
+gui.Form1.cmdBegPL.parent("frame2")
+gui.Form1.cmdBegPL.fontname("Arial")
+gui.Form1.cmdBegPL.fontsize(8)
+gui.Form1.cmdBegPL.event(click,cmdpl_click)
+gui.Form1.lbl13.create(label,"Bin Range",True,1935,255,1,345,3765,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl13.parent("frame2")
+gui.Form1.txtEndBin.create(textbox,"",True,2090,300,0,3605,3995,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtEndBin.parent("frame2")
+gui.Form1.txtBegBin.create(textbox,"",True,2090,300,0,345,3995,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtBegBin.parent("frame2")
+gui.Form1.cmdEndBin.create(button)
+gui.Form1.cmdEndBin.caption("^")
+gui.Form1.cmdEndBin.visible(True)
+gui.Form1.cmdEndBin.size(255,300)
+gui.Form1.cmdEndBin.zorder(0)
+gui.Form1.cmdEndBin.position(5735,3995)
+gui.Form1.cmdEndBin.enabled(True)
+gui.Form1.cmdEndBin.parent("frame2")
+gui.Form1.cmdEndBin.fontname("Arial")
+gui.Form1.cmdEndBin.fontsize(8)
+gui.Form1.cmdEndBin.event(click,cmdbin_click)
+gui.Form1.cmdBegBin.create(button)
+gui.Form1.cmdBegBin.caption("^")
+gui.Form1.cmdBegBin.visible(True)
+gui.Form1.cmdBegBin.size(255,300)
+gui.Form1.cmdBegBin.zorder(0)
+gui.Form1.cmdBegBin.position(2435,3995)
+gui.Form1.cmdBegBin.enabled(True)
+gui.Form1.cmdBegBin.parent("frame2")
+gui.Form1.cmdBegBin.fontname("Arial")
+gui.Form1.cmdBegBin.fontsize(8)
+gui.Form1.cmdBegBin.event(click,cmdbin_click)
+gui.Form1.lbl14.create(label,"Through",True,930,255,1,2700,3995,True,2,Arial,8,-2147483633,0)
+gui.Form1.lbl14.parent("frame2")
+gui.Form1.txtEndSort.create(textbox,"",True,2090,300,0,3605,4835,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtEndSort.parent("frame2")
+gui.Form1.txtBegSort.create(textbox,"",True,2090,300,0,345,4835,True,0,Arial,8,-2147483643,1)
+gui.Form1.txtBegSort.parent("frame2")
+gui.Form1.lbl15.create(label,"Sort Code Range",True,1935,255,1,345,4610,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl15.parent("frame2")
+gui.Form1.cmdEndSort.create(button)
+gui.Form1.cmdEndSort.caption("^")
+gui.Form1.cmdEndSort.visible(True)
+gui.Form1.cmdEndSort.size(255,300)
+gui.Form1.cmdEndSort.zorder(0)
+gui.Form1.cmdEndSort.position(5735,4835)
+gui.Form1.cmdEndSort.enabled(True)
+gui.Form1.cmdEndSort.parent("frame2")
+gui.Form1.cmdEndSort.fontname("Arial")
+gui.Form1.cmdEndSort.fontsize(8)
+gui.Form1.cmdEndSort.event(click,cmdsort_click)
+gui.Form1.cmdBegSort.create(button)
+gui.Form1.cmdBegSort.caption("^")
+gui.Form1.cmdBegSort.visible(True)
+gui.Form1.cmdBegSort.size(255,300)
+gui.Form1.cmdBegSort.zorder(0)
+gui.Form1.cmdBegSort.position(2435,4835)
+gui.Form1.cmdBegSort.enabled(True)
+gui.Form1.cmdBegSort.parent("frame2")
+gui.Form1.cmdBegSort.fontname("Arial")
+gui.Form1.cmdBegSort.fontsize(8)
+gui.Form1.cmdBegSort.event(click,cmdsort_click)
+gui.Form1.lbl16.create(label,"Through",True,930,255,1,2700,4835,True,2,Arial,8,-2147483633,0)
+gui.Form1.lbl16.parent("frame2")
+gui.Form1.cmdPrint.create(button)
+gui.Form1.cmdPrint.caption(" Print Report")
+gui.Form1.cmdPrint.visible(True)
+gui.Form1.cmdPrint.size(1830,375)
+gui.Form1.cmdPrint.zorder(0)
+gui.Form1.cmdPrint.position(525,9425)
+gui.Form1.cmdPrint.enabled(True)
+gui.Form1.cmdPrint.fontname("Arial")
+gui.Form1.cmdPrint.fontsize(8)
+gui.Form1.cmdPrint.event(click,cmdprint_click)
+gui.Form1.lbl17.create(label,"Report Name",True,1935,255,1,400,390,True,0,Arial,8,-2147483633,0)
+gui.Form1.lbl17.parent("frame1")
+gui.Form1.cmdExport.create(button)
+gui.Form1.cmdExport.caption("Export to Excel")
+gui.Form1.cmdExport.visible(True)
+gui.Form1.cmdExport.size(1830,375)
+gui.Form1.cmdExport.zorder(0)
+gui.Form1.cmdExport.position(2465,9425)
+gui.Form1.cmdExport.enabled(True)
+gui.Form1.cmdExport.fontname("Arial")
+gui.Form1.cmdExport.fontsize(8)
+gui.Form1.cmdExport.event(click,cmdexport_click)
+gui.Form1.chkAllDte.create(checkbox)
+gui.Form1.chkAllDte.caption("All Dates")
+gui.Form1.chkAllDte.visible(True)
+gui.Form1.chkAllDte.size(1935,255)
+gui.Form1.chkAllDte.zorder(0)
+gui.Form1.chkAllDte.position(355,1055)
+gui.Form1.chkAllDte.enabled(True)
+gui.Form1.chkAllDte.alignment(0)
+gui.Form1.chkAllDte.parent("frame2")
+gui.Form1.chkAllDte.fontname("Arial")
+gui.Form1.chkAllDte.fontsize(8)
+
+
+gui.Form2..create
+gui.Form2..caption("Primary Sort Option")
+gui.Form2..size(3225,2070)
+gui.Form2..position(0,0)
+gui.Form2..event(unload,form2_unload)
+gui.Form2..alwaysontop(False)
+gui.Form2..fontname("Arial")
+gui.Form2..fontsize(8)
+gui.Form2..forecolor(0)
+gui.Form2..fontstyle(,,,,)
+gui.Form2..BackColor(-2147483633)
+gui.Form2..controlbox(True)
+gui.Form2..maxbutton(True)
+gui.Form2..minbutton(True)
+gui.Form2..mousepointer(0)
+gui.Form2..moveable(True)
+gui.Form2..sizeable(True)
+gui.Form2..ShowInTaskBar(True)
+gui.Form2..titlebar(True)
+gui.Form2.ddlSort.create(dropdownlist)
+gui.Form2.ddlSort.visible(True)
+gui.Form2.ddlSort.size(2625,330)
+gui.Form2.ddlSort.zorder(0)
+gui.Form2.ddlSort.position(200,300)
+gui.Form2.ddlSort.enabled(True)
+gui.Form2.ddlSort.fontname("Arial")
+gui.Form2.ddlSort.fontsize(8)
+gui.Form2.cmdOk.create(button)
+gui.Form2.cmdOk.caption("Ok")
+gui.Form2.cmdOk.visible(True)
+gui.Form2.cmdOk.size(855,375)
+gui.Form2.cmdOk.zorder(0)
+gui.Form2.cmdOk.position(200,900)
+gui.Form2.cmdOk.enabled(True)
+gui.Form2.cmdOk.fontname("Arial")
+gui.Form2.cmdOk.fontsize(8)
+gui.Form2.cmdOk.event(click,cmdok_click)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.UDT.InvMain.Define("Trmnl",String)
+Variable.UDT.InvMain.Define("Part",String,Part)
+Variable.UDT.InvMain.Define("Description",String,Description)
+Variable.UDT.InvMain.Define("Purchase_Year",String)
+Variable.UDT.InvMain.Define("UM_Inventory",String,UM_Inventory)
+Variable.UDT.InvMain.Define("Amt_Cost",Float,Amt_Cost)
+Variable.UDT.InvMain.Define("Qty_OnHand",Float,Qty_OnHand)
+Variable.UDT.InvMain.Define("USD_Total_Cost",Float)
+Variable.UDT.InvMain.Define("Invoice_No",String)
+Variable.UDT.InvMain.Define("Raw_Mat_Dol",Float)
+Variable.UDT.InvMain.Define("FG_Dol",Float)
+Variable.UDT.InvMain.Define("Total_Qty",Float)
+Variable.UDT.InvMain.Define("Vendor_No",String)
+Variable.UDT.InvMain.Define("Vendor_Name",String)
+Variable.UDT.InvMain.Define("Total_Cost",Float)
+Variable.UDT.InvMain.Define("Product_Line",String,Product_Line)
+Variable.UDT.InvMain.Define("Code_Sort",String,Code_Sort)
+Variable.UDT.InvMain.Define("Receiver",String)
+Variable.UDT.InvMain.Define("PO",String)
+Variable.UDT.InvMain.Define("PO_Line_No",String)
+Variable.uGlobal.uInvMain.Declare("InvMain")
+
+Variable.UDT.InvHist.Define("Part",String,Part)
+Variable.UDT.InvHist.Define("Date_History",String,Date_History)
+Variable.UDT.InvHist.Define("Receiver",String,Receiver)
+Variable.uGlobal.uInvHist.Declare("InvHist")
+
+Variable.UDT.ItemMstr.Define("Trmnl",String)
+Variable.UDT.ItemMstr.Define("Part",String,Part)
+Variable.UDT.ItemMstr.Define("Description",String)
+Variable.UDT.ItemMstr.Define("Purchase_Year",String)
+Variable.UDT.ItemMstr.Define("UM",String)
+Variable.UDT.ItemMstr.Define("USD_Cost",Float)
+Variable.UDT.ItemMstr.Define("Quantity",Float,Quantity)
+Variable.UDT.ItemMstr.Define("USD_Total_Cost",Float)
+Variable.UDT.ItemMstr.Define("Invoice_No",String)
+Variable.UDT.ItemMstr.Define("Raw_Mat_Dol",Float)
+Variable.UDT.ItemMstr.Define("FG_Dol",Float)
+Variable.UDT.ItemMstr.Define("Total_Qty",Float)
+Variable.UDT.ItemMstr.Define("Vendor_No",String)
+Variable.UDT.ItemMstr.Define("Vendor_Name",String)
+Variable.UDT.ItemMstr.Define("PL",String)
+Variable.UDT.ItemMstr.Define("PO",String,PO_Number)
+Variable.UDT.ItemMstr.Define("Bin",String,Bin)
+Variable.UDT.ItemMstr.Define("Serial_Number",String,Serial_Number)
+Variable.UDT.ItemMstr.Define("Length_In",Float)
+Variable.UDT.ItemMstr.Define("Width_In",Float)
+Variable.UDT.ItemMstr.Define("Length_m",Float)
+Variable.UDT.ItemMstr.Define("Width_M",Float)
+Variable.UDT.ItemMstr.Define("Surface",Float)
+Variable.UDT.ItemMstr.Define("USD_Cost_Sqm",Float)
+Variable.UDT.ItemMstr.Define("Total_Cost",Float)
+Variable.UDT.ItemMstr.Define("PO_Line_No",String,PO_Line_No)
+Variable.uGlobal.uItemMstr.Declare("ItemMstr")
+
+Variable.UDT.ItemLW.Define("Part",String,Part)
+Variable.UDT.ItemLW.Define("Serial",String,Serial)
+Variable.UDT.ItemLW.Define("Length",Float,Length)
+Variable.UDT.ItemLW.Define("Width",Float,Width)
+Variable.uGlobal.uItemLW.Declare("ItemLW")
+
+Variable.UDT.GLDtl.Define("PO_Number",String,PO_Number)
+Variable.UDT.GLDtl.Define("Vendor",String,Vendor)
+Variable.UDT.GLDtl.Define("Invoice",String,Invoice_No)
+Variable.UDT.GLDtl.Define("Post_Date",String,Post_Date)
+Variable.UDT.GLDtl.Define("PO_Line",String,PO_Line)
+Variable.UDT.GLDtl.Define("Receiver",String,Receiver)
+Variable.uGlobal.uGlDTl.Declare("GLDtl")
+
+Variable.Global.sPrint.Declare(String)
+
+Variable.UDT.AVEND.Define("Vendor",String,Vendor)
+Variable.UDT.AVEND.Define("Name_Vendor",String,Name_Vendor)
+Variable.uGlobal.uAvend.Declare("AVEND")
+
+Variable.UDT.User.Define("Part",String,Part)
+Variable.UDT.User.Define("User_Field_1",String,User_Field_1)
+Variable.UDT.User.Define("User_Field_2",String,User_Field_2)
+Variable.UDT.User.Define("User_Field_3",String,User_Field_3)
+Variable.UDT.User.Define("User_Field_4",String,User_Field_4)
+Variable.UDT.User.Define("User_Field_5",String,User_Field_5)
+Variable.UDT.User.Define("Vendor",String)
+Variable.UDT.User.Define("Name",String)
+Variable.UDT.User.Define("Serial_Number",String,Serial_Number)
+Variable.UDT.User.Define("PO",String)
+Variable.UDT.User.Define("PO_Line",String)
+Variable.uGlobal.uUser.Declare("User")
+
+
+Variable.UDT.Copy.Define("Vendor_Name",String,Vendor_Name)
+Variable.UDT.Copy.Define("Purchase_Year",String,Purchase_Year)
+Variable.UDT.Copy.Define("PL",String,Product_Line)
+Variable.UDT.Copy.Define("Bin",String,Bin)
+Variable.UDT.Copy.Define("Description",String,Description)
+Variable.UDT.Copy.Define("Part",String,Part)
+Variable.UDT.Copy.Define("Serial_Number",String,Serial_Number)
+Variable.UDT.Copy.Define("Width_In",Float,Width_in)
+Variable.UDT.Copy.Define("Length_In",Float,Length_In)
+Variable.UDT.Copy.Define("Quantity",Float,Quantity)
+Variable.UDT.Copy.Define("UM",String,Um)
+Variable.uGlobal.uCopy.Declare("Copy")
+
+Variable.UDT.CopyB.Define("Vendor_Name",String,Vendor_Name)
+Variable.UDT.CopyB.Define("Part",String,Part)
+Variable.UDT.CopyB.Define("Description",String,Description)
+Variable.UDT.CopyB.Define("Product_Line",String,Product_Line)
+Variable.UDT.CopyB.Define("Bin",String,Bin)
+Variable.UDT.CopyB.Define("UM",String,UM)
+Variable.UDT.CopyB.Define("Purchase_Year",String,Purchase_Year)
+Variable.UDT.CopyB.Define("Serial_Number",String,Serial_Number)
+Variable.UDT.CopyB.Define("Quantity",Float,Quantity)
+Variable.UDT.CopyB.Define("USD_Cost",Float,USD_Cost)
+Variable.UDT.CopyB.Define("USD_Total_Cost",Float,USD_Total_Cost)
+Variable.UDT.CopyB.Define("Length_m",Float,Length_m)
+Variable.UDT.CopyB.Define("Width_m",Float,Width_m)
+Variable.UDT.CopyB.Define("Surface",Float,Surface)
+Variable.UDT.CopyB.Define("USD_Cost_Sqm",Float,USD_Cost_Sqm)
+Variable.UDT.CopyB.Define("Invoice_No",String,Invoice_No)
+Variable.UDT.CopyB.Define("Raw_Mat_Dol",Float,Raw_Mat_Dol)
+Variable.UDT.CopyB.Define("FG_Dol",Float,FG_Dol)
+Variable.UDT.CopyB.Define("Total_Qty",Float,Total_Qty)
+Variable.UDT.CopyB.Define("Length_In",Float,Length_In)
+Variable.UDT.CopyB.Define("Width_In",Float,Width_In)
+Variable.uGlobal.uCopyB.Declare("CopyB")
+
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+
+
+F.ODBC.Connection!Con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass,500)
+
+F.Intrinsic.Control.CallSub(Screendefaults)
+Gui.Form1..Show
+
+Program.Sub.Main.End
+
+Program.Sub.Unload.Start
+
+F.ODBC.Connection!Con.Close
+F.Intrinsic.Control.End
+
+Program.Sub.Unload.End
+
+program.sub.cmdvndr_click.start
+
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.CommonBrowser(300,"",V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	F.Intrinsic.Control.If(V.Args.CONTROLNAME,=,"CMDBEGVNDR")
+		Gui.Form1.txtBegVndr.Text(V.Local.sRet(0))
+		Gui.Form1.txtEndVndr.Text(V.Local.sRet(0))
+	F.Intrinsic.Control.ElseIf(V.Args.CONTROLNAME,=,"CMDENDVNDR")
+		Gui.Form1.txtEndVndr.Text(V.Local.sRet(0))
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.endif
+
+program.sub.cmdvndr_click.end
+
+program.sub.cmdprt_click.start
+
+V.Local.sRet.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.iWidths.Declare(Long)
+
+
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+' by part num
+F.Intrinsic.Control.If(V.Screen.Form1!optPart.Value,=,1)
+	F.Intrinsic.UI.CommonBrowser(105,"",V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		F.Intrinsic.Control.If(V.Args.CONTROLNAME,=,"CMDBEGPRT")
+			Gui.Form1.txtBegPart.Text(V.Local.sRet(0))
+			Gui.Form1.txtEndPart.Text(V.Local.sRet(0))
+		F.Intrinsic.Control.ElseIf(V.Args.CONTROLNAME,=,"CMDENDPRT")
+			Gui.Form1.txtEndPart.Text(V.Local.sRet(0))
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.elseIf(V.Screen.Form1!optPart.Value,=,True)
+	F.Intrinsic.UI.CommonBrowser(105,"",V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		F.Intrinsic.Control.If(V.Args.CONTROLNAME,=,"CMDBEGPRT")
+			Gui.Form1.txtBegPart.Text(V.Local.sRet(0))
+			Gui.Form1.txtEndPart.Text(V.Local.sRet(0))
+		F.Intrinsic.Control.ElseIf(V.Args.CONTROLNAME,=,"CMDENDPRT")
+			Gui.Form1.txtEndPart.Text(V.Local.sRet(0))
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+' by descirpition
+F.Intrinsic.Control.ElseIf(V.Screen.Form1!optDescr.Value,=,1)
+	F.Intrinsic.String.Split("Description*!*Part*!*Rev*!*Locn*!*On Hand","*!*",V.Local.sTitles)
+	F.Intrinsic.String.Split("2000*!*1500*!*500*!*500*!*8","*!*",V.Local.iWidths)
+	F.Intrinsic.UI.Browser("Part by Description","Con","select Description, left(Part,17) as Part, substring(Part,18,3) as Rev,Location,Qty_OnHand from Inventory_Mstr order by Description,Part",V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		F.Intrinsic.Control.If(V.Args.CONTROLNAME,=,"CMDBEGPRT")
+			Gui.Form1.txtBegPart.Text(V.Local.sRet(0))
+			Gui.Form1.txtEndPart.Text(V.Local.sRet(0))
+		F.Intrinsic.Control.ElseIf(V.Args.CONTROLNAME,=,"CMDENDPRT")
+			Gui.Form1.txtEndPart.Text(V.Local.sRet(0))
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ElseIf(V.Screen.Form1!optDescr.Value,=,True)
+	F.Intrinsic.String.Split("Description*!*Part*!*Rev*!*Locn*!*On Hand","*!*",V.Local.sTitles)
+	F.Intrinsic.String.Split("3000*!*2000*!*500*!*500*!*1000","*!*",V.Local.iWidths)
+	F.Intrinsic.UI.Browser("Part by Description","Con","select Description, left(Part,17) as Part, substring(Part,18,3) as Rev,Location,Qty_OnHand from Inventory_Mstr order by Description,Part",V.Local.sTitles,V.Local.iWidths,8000,8000,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		F.Intrinsic.Control.If(V.Args.CONTROLNAME,=,"CMDBEGPRT")
+			Gui.Form1.txtBegPart.Text(V.Local.sRet(0))
+			Gui.Form1.txtEndPart.Text(V.Local.sRet(0))
+		F.Intrinsic.Control.ElseIf(V.Args.CONTROLNAME,=,"CMDENDPRT")
+			Gui.Form1.txtEndPart.Text(V.Local.sRet(0))
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.EndIf
+
+program.sub.cmdprt_click.end
+
+program.sub.dtpbegdate_change.start
+
+' just setting the end date to the beginning date, when it changes to try to prevent a reverse date range
+'Gui.Form1.dtpEndDate.Value(V.Screen.Form1!dtpBegDate.Value)
+
+program.sub.dtpbegdate_change.end
+
+program.sub.cmdpl_click.start
+
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.CommonBrowser(130,"",V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	F.Intrinsic.Control.If(V.Args.CONTROLNAME,=,"CMDBEGPL")
+		Gui.Form1.txtBegPL.Text(V.Local.sRet(0))
+		Gui.Form1.txtEndPL.Text(V.Local.sRet(0))
+	F.Intrinsic.Control.ElseIf(V.Args.CONTROLNAME,=,"CMDENDPL")
+		Gui.Form1.txtEndPL.Text(V.Local.sRet(0))
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+
+program.sub.cmdpl_click.end
+
+program.sub.cmdbin_click.start
+
+V.Local.sRet.Declare(String)
+
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.CommonBrowser(150,"",V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	F.Intrinsic.Control.If(V.Args.CONTROLNAME,=,"CMDBEGBIN")
+		Gui.Form1.txtBegBin.Text(V.Local.sRet(0))
+		Gui.Form1.txtEndBin.Text(V.Local.sRet(0))
+	F.Intrinsic.Control.ElseIf(V.Args.CONTROLNAME,=,"CMDENDBIN")
+		Gui.Form1.txtEndBin.Text(V.Local.sRet(0))
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+program.sub.cmdbin_click.end
+
+program.sub.cmdsort_click.start
+
+V.Local.sRet.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.iWidths.Declare(Long)
+V.Local.iFor.Declare(Long)
+V.Local.sString.Declare(String)
+
+V.Local.sTitles.Set("Sort Code")
+V.Local.iWidths.Set(3000)
+
+F.Intrinsic.UI.Browser("Sort Code","Con","select distinct Code_Sort from Inventory_Mstr Order by Code_Sort",V.Local.sTitles,V.Local.iWidths,8000,8000,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		F.Intrinsic.Control.If(V.Args.CONTROLNAME,=,"CMDBEGSORT")
+			Gui.Form1.txtBegSort.Text(V.Local.sRet(0))
+			Gui.Form1.txtEndSort.Text(V.Local.sRet(0))
+		F.Intrinsic.Control.Elseif(V.Args.CONTROLNAME,=,"CMDENDSORT")
+			Gui.Form1.txtEndSort.Text(V.Local.sRet(0))
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+
+program.sub.cmdsort_click.end
+
+program.sub.cmdprint_click.start
+
+V.Global.sPrint.Set("RPT")
+V.Local.sValues.Declare(String)
+
+
+' blank entries indicate "ALL"
+F.Intrinsic.Control.If(V.Screen.Form1!txtBegPart.Text,=,"")
+	Gui.Form1.txtBegPart.Text("ALL")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.Form1!txtBegBin.Text,=,"")
+	Gui.Form1.txtBegBin.Text("ALL")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.Form1!txtBegPL.Text,=,"")
+	Gui.Form1.txtBegPL.Text("ALL")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.Form1!txtBegSort.Text,=,"")
+	Gui.Form1.txtBegSort.Text("ALL")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.Form1!txtBegVndr.Text,=,"")
+	Gui.Form1.txtBegVndr.Text("ALL")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.Form1!txtLength.Text,=,"")
+	Gui.Form1.txtLength.Text("ALL")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.Form1!txtWidth.Text,=,"")
+	Gui.Form1.txtWidth.Text("ALL")
+F.Intrinsic.Control.EndIf
+
+' clear existing data from print table
+F.Intrinsic.String.Concat("delete from GCG_3599_Inventory_Rpt where Trmnl='",V.Caller.Terminal,"'",V.Local.sValues)
+F.ODBC.Connection!Con.Execute(V.Local.sValues)
+
+Gui.Form1..Visible(false)
+Gui.Form2..Show
+
+program.sub.cmdprint_click.end
+
+Program.Sub.ScreenDefaults.Start
+
+' add report Names
+Gui.Form1.ddlRptType.AddItem("Inventory Report")
+Gui.Form1.ddlRptType.AddItem("Physical Inventory Worksheet")
+Gui.Form1.ddlRptType.Text("Inventory Report")
+
+' add width operators
+Gui.Form1.ddlWidh.AddItem("=")
+Gui.Form1.ddlWidh.AddItem(">")
+Gui.Form1.ddlWidh.AddItem("<")
+Gui.Form1.ddlWidh.AddItem(">=")
+Gui.Form1.ddlWidh.AddItem("<=")
+Gui.Form1.ddlWidh.AddItem("<>")
+Gui.Form1.ddlWidh.Text("=")
+
+' add length operators
+Gui.Form1.ddlLength.AddItem("=")
+Gui.Form1.ddlLength.AddItem(">")
+Gui.Form1.ddlLength.AddItem("<")
+Gui.Form1.ddlLength.AddItem(">=")
+Gui.Form1.ddlLength.AddItem("<=")
+Gui.Form1.ddlLength.AddItem("<>")
+Gui.Form1.ddlLength.Text("=")
+
+' default Part browse to Part
+Gui.Form1.optPart.Value(1)
+
+' add primary sort options
+Gui.Form2.ddlSort.AddItem("Part No (High->Low)")
+Gui.Form2.ddlSort.AddItem("Part No (Low->High)")
+Gui.Form2.ddlSort.AddItem("Part Description (A->Z)")
+Gui.Form2.ddlSort.AddItem("Vendor No (High->Low)")
+Gui.Form2.ddlSort.AddItem("Vendor No (Low->High)")
+Gui.Form2.ddlSort.AddItem("Vendor Name (A->Z)")
+Gui.Form2.ddlSort.AddItem("Product Line (High->Low)")
+Gui.Form2.ddlSort.AddItem("Product Line (Low->High)")
+Gui.Form2.ddlSort.AddItem("Bin (Ascending)")
+Gui.Form2.ddlSort.Text("Part No (High->Low)")
+
+Program.Sub.ScreenDefaults.End
+
+program.sub.cmdok_click.start
+
+Gui.Form2..Visible(false)
+F.Intrinsic.Control.CallSub(Initialvalues)
+F.Intrinsic.Control.CallSub(Exclude_data)
+F.Intrinsic.Control.CallSub(Sortdata)
+F.Intrinsic.Control.CallSub(Additionalvalues)
+F.Intrinsic.Control.CallSub(Printreport)
+F.Intrinsic.Control.CallSub(Unload)
+
+program.sub.cmdok_click.end
+
+program.sub.form2_unload.start
+
+Gui.Form2..Visible(False)
+Gui.Form1..Visible(true)
+
+program.sub.form2_unload.end
+
+program.sub.cmdexport_click.start
+
+V.Global.sPrint.Set("XLS")
+V.Local.sValues.Declare(String)
+
+' blank entries indicate "ALL"
+F.Intrinsic.Control.If(V.Screen.Form1!txtBegPart.Text,=,"")
+	Gui.Form1.txtBegPart.Text("ALL")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.Form1!txtBegBin.Text,=,"")
+	Gui.Form1.txtBegBin.Text("ALL")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.Form1!txtBegPL.Text,=,"")
+	Gui.Form1.txtBegPL.Text("ALL")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.Form1!txtBegSort.Text,=,"")
+	Gui.Form1.txtBegSort.Text("ALL")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.Form1!txtBegVndr.Text,=,"")
+	Gui.Form1.txtBegVndr.Text("ALL")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.Form1!txtLength.Text,=,"")
+	Gui.Form1.txtLength.Text("ALL")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.Form1!txtWidth.Text,=,"")
+	Gui.Form1.txtWidth.Text("ALL")
+F.Intrinsic.Control.EndIf
+
+
+' clear existing data from print table
+F.Intrinsic.String.Concat("delete from GCG_3599_Inventory_Rpt where Trmnl='",V.Caller.Terminal,"'",V.Local.sValues)
+F.ODBC.Connection!Con.Execute(V.Local.sValues)
+
+
+Gui.Form1..Visible(false)
+Gui.Form2..Show
+
+
+program.sub.cmdexport_click.end
+
+Program.Sub.SortData.Start
+
+V.Local.iFor.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.sValue.Declare(String)
+
+'==========SYNC INV WITH ITEM=====================================
+F.Intrinsic.Control.If(V.uGlobal.uInvMain!Part.UBound,<>,-1)
+	F.Intrinsic.Control.For(V.Local.iFor,V.uGlobal.uInvMain!Part.LBound,V.uGlobal.uInvMain!Part.UBound,1)
+		' look for item master parts that match the inv main part
+		F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uItemMstr!Part,V.uGlobal.uInvMain(v.Local.iFor)!Part,V.Local.sRet)
+		' if part found, unflag item mstr and set inv main values.
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+'			F.Intrinsic.Variable.UDTMultiUnFlag(V.uGlobal.uItemMstr!Part,V.uGlobal.uInvMain(v.Local.iFor)!Part)
+'			F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uInvMain!Part,V.uGlobal.uInvMain(v.Local.iFor)!Part)
+			F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uItemMstr!Part,V.uGlobal.uInvMain(v.Local.iFor)!Part,V.uGlobal.uItemMstr!UM,V.uGlobal.uInvMain(v.Local.iFor)!UM_Inventory)
+			F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uItemMstr!Part,V.uGlobal.uInvMain(v.Local.iFor)!Part,V.uGlobal.uItemMstr!PL,V.uGlobal.uInvMain(v.Local.iFor)!Product_Line)
+			F.Intrinsic.Math.Round(V.uGlobal.uInvMain(v.Local.iFor)!Amt_Cost,1,V.uGlobal.uInvMain(v.Local.iFor)!Amt_Cost)
+			F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uItemMstr!Part,V.uGlobal.uInvMain(v.Local.iFor)!Part,V.uGlobal.uItemMstr!USD_Cost,V.uGlobal.uInvMain(v.Local.iFor)!Amt_Cost)
+			F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uItemMstr!Part,V.uGlobal.uInvMain(v.Local.iFor)!Part,V.uGlobal.uItemMstr!Description,V.uGlobal.uInvMain(v.Local.iFor)!Description)
+			F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uItemMstr!Part,V.uGlobal.uInvMain(v.Local.iFor)!Part,V.uGlobal.uItemMstr!Total_Qty,V.uGlobal.uInvMain(v.Local.iFor)!Qty_OnHand)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uitemMstr!Part,V.uGlobal.uInvMain!Part)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iFor)
+F.Intrinsic.Control.EndIf
+' delete all InvMstr parts still flagged
+F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uItemMstr)
+'F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uInvMain)
+
+
+'========BIN=======================================
+' if Bin range entered
+F.Intrinsic.Control.If(V.Screen.Form1!txtBegBin.Text,<>,"ALL")
+	F.Intrinsic.String.Concat("<::",V.Screen.Form1!txtBegBin.Text,V.Local.sValue)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uItemMstr!Bin,V.Local.sValue)
+	F.Intrinsic.String.Concat(">::",V.Screen.Form1!txtEndBin.Text,V.Local.sValue)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uItemMstr!Bin,V.Local.sValue)
+F.Intrinsic.Control.EndIf
+' delete all InvMstr parts still flagged
+F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uItemMstr)
+
+'==========VENDOR/INVOICE/GL DETAIL INFO=====================================
+' if Vendor range entered
+F.Intrinsic.Control.If(V.Screen.Form1!txtBegVndr.Text,<>,"ALL")
+	' flag/delete gl detail lines for vendors not in entered range
+	F.Intrinsic.String.Concat("<::",V.Screen.Form1!txtBegVndr.Text,V.Local.sValue)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uGlDTl!Vendor,V.Local.sValue)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uUser!Vendor,V.Local.sValue)
+
+	F.Intrinsic.String.Concat(">::",V.Screen.Form1!txtEndVndr.Text,V.Local.sValue)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uGlDTl!Vendor,V.Local.sValue)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uUser!Vendor,V.Local.sValue)
+	F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uGlDTl)
+	F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uUser)
+F.Intrinsic.Control.EndIf
+
+' if a date range was enterd, will be filtering data, otherwise just setting values
+F.Intrinsic.Control.If(V.Screen.Form1!chkAllDte.Value,<>,1)
+	' flag all item master records
+	F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uItemMstr)
+	F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uInvMain)
+F.Intrinsic.Control.EndIf
+
+' for all records left, look for matching item master record
+F.Intrinsic.Control.For(V.Local.iFor,V.uGlobal.uGlDTl!PO_Number.LBound,V.uGlobal.uGlDTl!PO_Number.UBound,1)
+	F.Intrinsic.String.Concat(V.uGlobal.uGlDTl(v.Local.iFor)!PO_Line,"0",V.uGlobal.uGlDTl(v.Local.iFor)!PO_Line)
+	' ITEM MASTER
+	'look for records with PO numbers
+	F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uItemMstr!PO,V.uGlobal.uGlDTl(v.Local.iFor)!PO_Number,V.uGlobal.uItemMstr!PO_Line_No,V.uGlobal.uGlDTl(v.Local.iFor)!PO_Line,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		' if PO match found, unflag and set vendor
+		F.Intrinsic.Variable.UDTMultiUnFlag(V.uGlobal.uItemMstr!PO,V.uGlobal.uGlDTl(v.Local.iFor)!PO_Number)
+		F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uItemMstr!PO,V.uGlobal.uGlDTl(v.Local.iFor)!PO_Number,V.uGlobal.uItemMstr!PO_Line_No,V.uGlobal.uGlDTl(v.Local.iFor)!PO_Line,V.uGlobal.uItemMstr!Purchase_Year,V.uGlobal.uGlDTl(v.Local.iFor)!Post_Date)
+		F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uItemMstr!PO,V.uGlobal.uGlDTl(v.Local.iFor)!PO_Number,V.uGlobal.uItemMstr!PO_Line_No,V.uGlobal.uGlDTl(v.Local.iFor)!PO_Line,V.uGlobal.uItemMstr!Vendor_No,V.uGlobal.uGlDTl(v.Local.iFor)!Vendor)
+		F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uItemMstr!PO,V.uGlobal.uGlDTl(v.Local.iFor)!PO_Number,V.uGlobal.uItemMstr!PO_Line_No,V.uGlobal.uGlDTl(v.Local.iFor)!PO_Line,V.uGlobal.uItemMstr!Invoice_No,V.uGlobal.uGlDTl(v.Local.iFor)!Invoice)
+		F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uAvend!Vendor,V.uGlobal.uGlDTl(v.Local.iFor)!Vendor,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uItemMstr!Vendor_No,V.uGlobal.uAvend(v.Local.sRet)!Vendor,V.uGlobal.uItemMstr!Vendor_Name,V.uGlobal.uAvend(v.Local.sRet)!Name_Vendor)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	' INV MAIN
+	'look for records with Receiver numbers
+	F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uInvMain!Receiver,V.uGlobal.uGlDTl(v.Local.iFor)!Receiver,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		' if Receiver match found, unflag and set vendor/PO info
+		F.Intrinsic.Variable.UDTMultiUnFlag(V.uGlobal.uInvMain!Receiver,V.uGlobal.uGlDTl(v.Local.iFor)!Receiver)
+		F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uInvMain!Receiver,V.uGlobal.uGlDTl(v.Local.iFor)!Receiver,V.uGlobal.uInvMain!Purchase_Year,V.uGlobal.uGlDTl(v.Local.iFor)!Post_Date)
+		F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uInvMain!Receiver,V.uGlobal.uGlDTl(v.Local.iFor)!Receiver,V.uGlobal.uInvMain!Vendor_No,V.uGlobal.uGlDTl(v.Local.iFor)!Vendor)
+		F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uInvMain!Receiver,V.uGlobal.uGlDTl(v.Local.iFor)!Receiver,V.uGlobal.uInvMain!Invoice_No,V.uGlobal.uGlDTl(v.Local.iFor)!Invoice)
+		F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uInvMain!Receiver,V.uGlobal.uGlDTl(v.Local.iFor)!Receiver,V.uGlobal.uInvMain!PO,V.uGlobal.uGlDTl(v.Local.iFor)!PO_Number)
+		F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uInvMain!Receiver,V.uGlobal.uGlDTl(v.Local.iFor)!Receiver,V.uGlobal.uInvMain!PO_Line_No,V.uGlobal.uGlDTl(v.Local.iFor)!PO_Line)
+		F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uAvend!Vendor,V.uGlobal.uGlDTl(v.Local.iFor)!Vendor,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uInvMain!Vendor_No,V.uGlobal.uAvend(v.Local.sRet)!Vendor,V.uGlobal.uInvMain!Vendor_Name,V.uGlobal.uAvend(v.Local.sRet)!Name_Vendor)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Next(V.Local.iFor)
+F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uItemMstr)
+F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uInvMain)
+
+' set Vendor, year, Invoice for the ones with the vlaues in user fields
+F.Intrinsic.Control.For(V.Local.iFor,V.uGlobal.uUser!Part.LBound,V.uGlobal.uUser!Part.UBound,1)
+	F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uItemMstr!Part,V.uGlobal.uUser(v.Local.iFor)!Part,V.uGlobal.uItemMstr!Serial_Number,V.uGlobal.uUser(v.Local.iFor)!Serial_Number,V.uGlobal.uItemMstr!Vendor_No,V.uGlobal.uUser(v.Local.iFor)!Vendor)
+	F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uItemMstr!Part,V.uGlobal.uUser(v.Local.iFor)!Part,V.uGlobal.uItemMstr!Serial_Number,V.uGlobal.uUser(v.Local.iFor)!Serial_Number,V.uGlobal.uItemMstr!Vendor_Name,V.uGlobal.uUser(v.Local.iFor)!Name)
+	F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uItemMstr!Part,V.uGlobal.uUser(v.Local.iFor)!Part,V.uGlobal.uItemMstr!Serial_Number,V.uGlobal.uUser(v.Local.iFor)!Serial_Number,V.uGlobal.uItemMstr!Invoice_No,V.uGlobal.uUser(v.Local.iFor)!User_Field_5)
+	F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uItemMstr!Part,V.uGlobal.uUser(v.Local.iFor)!Part,V.uGlobal.uItemMstr!Serial_Number,V.uGlobal.uUser(v.Local.iFor)!Serial_Number,V.uGlobal.uItemMstr!Purchase_Year,V.uGlobal.uUser(v.Local.iFor)!User_Field_4)
+	F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uItemMstr!Part,V.uGlobal.uUser(v.Local.iFor)!Part,V.uGlobal.uItemMstr!Serial_Number,V.uGlobal.uUser(v.Local.iFor)!Serial_Number,V.uGlobal.uItemMstr!PO,V.uGlobal.uUser(v.Local.iFor)!PO)
+	F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uItemMstr!Part,V.uGlobal.uUser(v.Local.iFor)!Part,V.uGlobal.uItemMstr!Serial_Number,V.uGlobal.uUser(v.Local.iFor)!Serial_Number,V.uGlobal.uItemMstr!PO_Line_No,V.uGlobal.uUser(v.Local.iFor)!PO_Line)
+F.Intrinsic.Control.Next(V.Local.iFor)
+
+
+'==========LENGTH/WIDTH=====================================
+F.Intrinsic.Control.If(V.Screen.Form1!txtLength.Text,<>,"ALL")
+	F.Intrinsic.Control.If(V.Screen.Form1!txtWidth.Text,=,"ALL")
+		F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uItemLW)
+		F.Intrinsic.String.Concat(V.Screen.Form1!ddlLength.Text,"::",V.Screen.Form1!txtLength.Text,V.Local.sValue)
+		F.Intrinsic.Variable.UDTMultiunFlag(V.uGlobal.uItemLW!Length,V.Local.sValue)
+		F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uItemLW)
+
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uItemLW)
+		F.Intrinsic.String.Concat(V.Screen.Form1!ddlLength.Text,"::",V.Screen.Form1!txtLength.Text,V.Local.sValue)
+		F.Intrinsic.Variable.UDTMultiunFlag(V.uGlobal.uItemLW!Length,V.Local.sValue)
+		F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uItemLW)
+
+		F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uItemLW)
+		F.Intrinsic.String.Concat(V.Screen.Form1!ddlWidh.Text,"::",V.Screen.Form1!txtWidth.Text,V.Local.sValue)
+		F.Intrinsic.Variable.UDTMultiunFlag(V.uGlobal.uItemLW!Width,V.Local.sValue)
+		F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uItemLW)
+
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.If(V.Screen.Form1!txtWidth.Text,<>,"ALL")
+	F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uItemLW)
+		F.Intrinsic.String.Concat(V.Screen.Form1!ddlWidh.Text,"::",V.Screen.Form1!txtWidth.Text,V.Local.sValue)
+		F.Intrinsic.Variable.UDTMultiunFlag(V.uGlobal.uItemLW!Width,V.Local.sValue)
+		F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uItemLW)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Variable.UDTFlagAll(V.uGlobal.uItemMstr)
+F.Intrinsic.Control.For(V.Local.iFor,V.uGlobal.uItemLW!Serial.LBound,V.uGlobal.uItemLW!Serial.UBound,1)
+	F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uItemMstr!Serial_Number,V.uGlobal.uItemLW(v.Local.iFor)!Serial,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.Intrinsic.Variable.UDTMultiUnFlag(V.uGlobal.uItemMstr!Serial_Number,V.uGlobal.uItemLW(v.Local.iFor)!Serial)
+		F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uItemMstr!Serial_Number,V.uGlobal.uItemLW(v.Local.iFor)!Serial,V.uGlobal.uItemMstr!Length_In,V.uGlobal.uItemLW(v.Local.iFor)!Length)
+		F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uItemMstr!Serial_Number,V.uGlobal.uItemLW(v.Local.iFor)!Serial,V.uGlobal.uItemMstr!Width_In,V.uGlobal.uItemLW(v.Local.iFor)!Width)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iFor)
+F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uItemMstr)
+
+
+Program.Sub.SortData.End
+
+Program.Sub.PrintReport.Start
+
+V.Local.sParams.Declare(String)
+V.Local.sValues.Declare(String)
+V.Local.sReportPath.Declare(String)
+V.Local.iRptID.Declare(Long)
+V.Local.bExists.Declare(Boolean)
+V.Local.iHwnd.Declare(Long)
+V.Local.sLength.Declare(String)
+V.Local.sWidth.Declare(String)
+V.Local.sExclusions.Declare(String)
+V.Local.sGroup.Declare(String)
+V.Local.iFor.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.sFileData.Declare(String)
+V.Local.sTemplate.Declare(String)
+V.Local.sEscost.Declare(String)
+V.Local.sSel.Declare(String)
+V.Local.sSort.Declare(String)
+' concatenate operator and dimension for header
+F.Intrinsic.String.Concat(V.Screen.Form1!ddlLength.Text,V.Screen.Form1!txtLength.Text,V.Local.sLength)
+F.Intrinsic.String.Concat(V.Screen.Form1!ddlWidh.Text,V.Screen.Form1!txtWidth.Text,V.Local.sWidth)
+
+' set exclusion text for report header
+F.Intrinsic.String.Concat(V.Screen.Form1!chkExCost.Value,"*!*",V.Screen.Form1!chkExCC.Value,"*!*",V.Screen.Form1!chkExWIH.Value,"*!*",V.Screen.Form1!chkExWIH.Value,"*!*",V.Screen.Form1!chkExZ.Value,V.Local.sValues)
+F.Intrinsic.String.IsInString(V.Local.sValues,"1",False,V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists,=,False)
+	V.Local.sExclusions.Set("No Exclusions")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sValues,"*!*",V.Local.sValues)
+	F.Intrinsic.Control.If(V.Local.sValues(0),=,"1")
+		V.Local.sValues(0).Set(" -Exclude Cost- ")
+	F.Intrinsic.Control.Else
+		V.Local.sValues(0).Set("")
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.sValues(1),=,"1")
+		V.Local.sValues(1).Set(" -Exclude CC Inventory- ")
+	F.Intrinsic.Control.Else
+		V.Local.sValues(1).Set("")
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.sValues(2),=,"1")
+		V.Local.sValues(2).Set(" -Exclude WIH Inventory- ")
+	F.Intrinsic.Control.Else
+		V.Local.sValues(2).Set("")
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.sValues(3),=,"1")
+		V.Local.sValues(3).Set(" -Exclude ZZ Inventory- ")
+	F.Intrinsic.Control.Else
+		V.Local.sValues(3).Set("")
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.String.Concat(V.Local.sValues(0),V.Local.sValues(1),V.Local.sValues(2),V.Local.sValues(3),V.Local.sExclusions)
+F.Intrinsic.Control.EndIf
+
+
+' set udt field references
+F.Intrinsic.Variable.UDTSetMemberValue(V.uGlobal.uItemMstr!Trmnl,V.Caller.Terminal)
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uItemMstr!Trmnl,"Trmnl")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uItemMstr!Description,"Description")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uItemMstr!PL,"Product_Line")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uItemMstr!Purchase_Year,"Purchase_Year")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uItemMstr!Length_In,"Length_In")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uItemMstr!Width_In,"Width_In")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uItemMstr!UM,"UM")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uItemMstr!USD_Cost,"USD_Cost")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uItemMstr!USD_Total_Cost,"USD_Total_Cost")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uItemMstr!Invoice_No,"Invoice_No")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uItemMstr!RAW_Mat_Dol,"RAW_Mat_Dol")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uItemMstr!Length_m,"Length_m")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uItemMstr!Width_m,"Width_m")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uItemMstr!Surface,"Surface")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uItemMstr!USD_Cost_Sqm,"USD_Cost_Sqm")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uItemMstr!FG_Dol,"FG_Dol")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uItemMstr!Total_Qty,"Total_Qty")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uItemMstr!Total_Cost,"Total_Cost")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uItemMstr!Vendor_No,"Vendor_No")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uItemMstr!Vendor_Name,"Vendor_Name")
+
+
+' set udt field references
+F.Intrinsic.Variable.UDTSetMemberValue(V.uGlobal.uInvMain!Trmnl,V.Caller.Terminal)
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uInvMain!Trmnl,"Trmnl")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uInvMain!Part,"Part")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uInvMain!Description,"Description")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uInvMain!Product_Line,"Product_Line")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uInvMain!Purchase_Year,"Purchase_Year")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uInvMain!UM_Inventory,"UM")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uInvMain!Amt_Cost,"USD_Cost")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uInvMain!USD_Total_Cost,"USD_Total_Cost")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uInvMain!Invoice_No,"Invoice_No")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uInvMain!RAW_Mat_Dol,"RAW_Mat_Dol")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uInvMain!FG_Dol,"FG_Dol")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uInvMain!Total_Qty,"Total_Qty")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uInvMain!Total_Cost,"Total_Cost")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uInvMain!Vendor_No,"Vendor_No")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uInvMain!Vendor_Name,"Vendor_Name")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uInvMain!PO,"PO_Number")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uInvMain!PO_Line_No,"PO_Line_No")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uInvMain!Qty_OnHand,"Quantity")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uInvMain!Code_Sort,"")
+F.Intrinsic.Variable.SetUDTFieldReference(V.uGlobal.uInvMain!Receiver,"")
+
+V.Local.sEscost.Set("<>::0")
+'if "no cost" option selected, fill cost values with 0
+F.Intrinsic.Control.If(V.Screen.Form1!chkExCost.Value,=,1)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uItemMstr!USD_Cost,V.Local.sEscost)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uInvMain!Amt_Cost,V.Local.sEscost)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uItemMstr!USD_Cost,0)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uInvMain!Amt_Cost,0)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uItemMstr)
+
+'sort udt based on sort selection
+F.Intrinsic.Control.If(V.Screen.Form2!ddlSort.Text,=,"Part No (High->Low)")
+	F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uItemMstr!Part,False)
+	F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uInvMain!Part,False)
+	V.Local.sGroup.Set("PART")
+	V.Local.sSort.Set("DSC")
+F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Part No (Low->High)")
+	F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uItemMstr!Part,True)
+	F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uInvMain!Part,True)
+	V.Local.sGroup.Set("PART")
+F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Part Description (A->Z)")
+	F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uItemMstr!Description,True)
+	F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uInvMain!Description,True)
+	V.Local.sGroup.Set("DESCR")
+F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Vendor No (High->Low)")
+	F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uItemMstr!Vendor_No,False)
+	F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uInvMain!Vendor_No,False)
+	V.Local.sGroup.Set("VND")
+	V.Local.sSort.Set("DSC")
+F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Vendor No (Low->High)")
+	F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uItemMstr!Vendor_No,True)
+	F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uInvMain!Vendor_No,True)
+	V.Local.sGroup.Set("VND")
+F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Vendor Name (A->Z)")
+	F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uItemMstr!Vendor_Name,True)
+	F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uInvMain!Vendor_Name,True)
+	V.Local.sGroup.Set("NAME")
+F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Product Line (High->Low)")
+	F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uItemMstr!PL,False)
+	F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uInvMain!Product_Line,False)
+	V.Local.sGroup.Set("PL")
+	V.Local.sSort.Set("DSC")
+F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Product Line (Low->High)")
+	F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uItemMstr!PL,True)
+	F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uInvMain!Product_Line,True)
+	V.Local.sGroup.Set("PL")
+F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Bin (Ascending)")
+	F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uItemMstr!BIN,True)
+	V.Local.sGroup.Set("BIN")
+F.Intrinsic.Control.EndIf
+
+' going to print a blank report, if no data is found.
+F.Intrinsic.Control.If(V.uGlobal.uItemMstr!Part.UBound,>,-1)
+	F.ODBC.Connection!Con.OpenRecordsetRW("rstSel","select * from GCG_3599_Inventory_Rpt")
+		F.Intrinsic.Variable.SaveUDTToRecordset("Con","rstSel","V.uGlobal.uItemMstr")
+	F.ODBC.Con!rstSel.Close
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.uGlobal.uInvMain!Part.UBound,>,-1)
+	F.ODBC.Connection!Con.OpenRecordsetRW("rstSel","select Trmnl,Part,Description,Product_Line,Purchase_Year,PO_Number,Quantity,UM,USD_Cost,USD_Total_Cost,Invoice_No,Raw_Mat_Dol,FG_Dol, Total_Qty,Total_Cost,Vendor_No, Vendor_Name,PO_Line_No  from GCG_3599_Inventory_Rpt")
+		F.Intrinsic.Variable.SaveUDTToRecordset("Con","rstSel","V.uGlobal.uInvMain")
+	F.ODBC.Con!rstSel.Close
+F.Intrinsic.Control.EndIf
+
+' if "report" option was selected
+F.Intrinsic.Control.If(V.Global.sPrint,=,"RPT")
+	F.Intrinsic.String.Split("Trmnl*!*BegDate*!*EndDate*!*BegPart*!*EndPart*!*BegPL*!*EndPL*!*BegBin*!*EndBin*!*BegSort*!*EndSort*!*BegVndr*!*EndVndr*!*Length*!*Width*!*Exclusions*!*Group*!*ExCost*!*AllDte*!*Sort","*!*",V.Local.sParams)
+	F.Intrinsic.String.Concat(V.Caller.Terminal,"*!*",V.Screen.Form1!dtpBegDate.Value,"*!*",V.Screen.Form1!dtpEndDate.Value,"*!*",V.Screen.Form1!txtBegPart.Text,"*!*",V.Screen.Form1!txtEndPart.Text,"*!*",V.Local.sValues)
+	F.Intrinsic.String.Concat(V.Local.sValues,V.Screen.Form1!txtBegPL.Text,"*!*",V.Screen.Form1!txtEndPL.Text,"*!*",V.Screen.Form1!txtBegBin.Text,"*!*",V.Screen.Form1!txtEndBin.Text,"*!*",V.Local.sValues)
+	F.Intrinsic.String.Concat(V.Local.sValues,V.Screen.Form1!txtBegSort.Text,"*!*",V.Screen.Form1!txtEndSort.Text,"*!*",V.Screen.Form1!txtBegVndr.Text,"*!*",V.Screen.Form1!txtEndVndr.Text,"*!*",V.Local.sValues)
+	F.Intrinsic.String.Concat(V.Local.sValues,V.Local.sLength,"*!*",V.Local.sWidth,"*!*",V.Local.sExclusions,"*!*",V.Local.sGroup,"*!*",V.Screen.Form1!chkExCost.Value,"*!*",V.Screen.Form1!chkAllDte.Value,"*!*",V.Local.sSort,V.Local.sValues)
+	F.Intrinsic.String.Split(V.Local.sValues,"*!*",V.Local.sValues)
+
+	' if "Inventory Report" was selected
+	F.Intrinsic.Control.If(V.Screen.Form1!ddlRptType.Text,=,"Inventory Report")
+		F.Intrinsic.String.Concat(V.Caller.BusintDir,"\Custom\GCG_3599_Inventory.rpt",V.Local.sReportPath)
+		F.Global.BI.InitializeReport("GCG_Inventory.rpt",V.Local.sReportPath,V.Local.iRptID)
+	' if "Physical Inventory Worksheet" was selected
+	F.Intrinsic.Control.Elseif(V.Screen.Form1!ddlRptType.Text,=,"Physical Inventory Worksheet")
+		F.Intrinsic.String.Concat(V.Caller.BusintDir,"\Custom\GCG_3599_Physical_Inv_Wksht.rpt",V.Local.sReportPath)
+		F.Global.BI.InitializeReport("GCG_Physical_Inv_Wksht.rpt",V.Local.sReportPath,V.Local.iRptID)
+	F.Intrinsic.Control.EndIf
+	' print the report
+	F.Global.BI.PrintReport(V.Local.iRptID,0,V.Local.sParams,V.Local.sValues,"",False)
+
+' if "export" option was selected
+F.Intrinsic.Control.ElseIf(V.Global.sPrint,=,"XLS")
+	F.Intrinsic.Control.If(V.Screen.Form1!ddlRptType.Text,=,"Inventory Report")
+		F.Intrinsic.String.Concat("select Part,Description,Product_Line,Bin,Purchase_Year,Serial_Number,Width_In,Length_In,Quantity,UM,USD_Cost,USD_Total_Cost,Length_m,Width_m,Surface,USD_Cost_Sqm,Invoice_No,Raw_Mat_Dol,FG_Dol,Total_Qty,USD_Total_Cost,Vendor_Name  from GCG_3599_Inventory_Rpt where Trmnl='",V.Caller.Terminal,"' order by Part,serial_Number",V.Local.sSel)
+		F.ODBC.Connection!Con.OpenRecordsetRO("rstSel",V.Local.sSel)
+			F.Intrinsic.Control.If(V.ODBC.Con!rstSel.EOF,=,False)
+				F.Intrinsic.Variable.LoadUDTFromRecordset("Con","rstSel","V.uGlobal.uCopyB",False)
+			F.Intrinsic.Control.EndIf
+		F.ODBC.Con!rstSel.Close
+
+		'sort udt based on sort selection
+		F.Intrinsic.Control.If(V.Screen.Form2!ddlSort.Text,=,"Part No (High->Low)")
+			F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uCopyB!Part,True)
+		F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Part No (Low->High)")
+			F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uCopyB!Part,False)
+		F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Part Description (A->Z)")
+			F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uCopyB!Description,False)
+'		F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Vendor No (High->Low)")
+'			F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uCopyB!Vendor_No,False)
+'		F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Vendor No (Low->High)")
+'			F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uCopyB!Vendor_No,True)
+		F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Vendor Name (A->Z)")
+			F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uCopyB!Vendor_Name,False)
+		F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Product Line (High->Low)")
+			F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uCopyB!Product_Line,True)
+		F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Product Line (Low->High)")
+			F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uCopyB!Product_Line,False)
+		F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Bin (Ascending)")
+			F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uCopyB!BIN,False)
+		F.Intrinsic.Control.EndIf
+
+		V.Local.sFileData.Set("$!$$!$$!$$!$$!$$!$")
+		F.Intrinsic.Variable.UDTToString(V.uGlobal.uCopyB,"Part*!*Description*!*Product_Line*!*Bin*!*Purchase_Year*!*Serial_Number*!*Width_In*!*Length_In*!*Quantity*!*UM*!*USD_Cost*!*USD_Total_Cost*!*Length_m*!*Width_m*!*Surface*!*USD_Cost_Sqm*!*Invoice_No*!*Raw_Mat_Dol*!*FG_Dol*!*Total_Qty*!*USD_Total_Cost*!*Vendor_Name","$!$","*!*",V.Local.sRet)
+		F.Intrinsic.String.Concat(V.Local.sFileData,"$!$",V.Local.sRet,V.Local.sFileData)
+
+		F.Intrinsic.String.Concat(V.Caller.FilesDir,"\Templates\GCG_3599_Inv_Report_Template.xls",V.Local.sTemplate)
+		F.Intrinsic.String.Concat(V.System.Temp,"\GCG_3599_Inventory_Report.xls",V.Local.sReportPath)
+		F.Intrinsic.File.Exists(V.Local.sReportPath,V.Local.bExists)
+		F.Intrinsic.Control.If(V.Local.bExists,=,True)
+			F.Intrinsic.File.DeleteFile(V.Local.sReportPath)
+		F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat("select Vendor_Name,Purchase_Year,Product_Line,Bin,Description,Part,Serial_Number,Width_In,Length_In,Quantity,UM  from GCG_3599_Inventory_Rpt where Trmnl='",V.Caller.Terminal,"' ",V.Local.sSel)
+		F.ODBC.Connection!Con.OpenRecordsetRW("rstSel",V.Local.sSel)
+			F.Intrinsic.Variable.LoadUDTFromRecordset("Con","rstSel","V.uGlobal.uCopy",False)
+		F.ODBC.Con!rstSel.Close
+
+		'sort udt based on sort selection
+		F.Intrinsic.Control.If(V.Screen.Form2!ddlSort.Text,=,"Part No (High->Low)")
+			F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uCopy!Part,True)
+		F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Part No (Low->High)")
+			F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uCopy!Part,False)
+		F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Part Description (A->Z)")
+			F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uCopy!Description,False)
+'		F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Vendor No (High->Low)")
+'			F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uCopyB!Vendor_No,False)
+'		F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Vendor No (Low->High)")
+'			F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uCopyB!Vendor_No,True)
+		F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Vendor Name (A->Z)")
+			F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uCopy!Vendor_Name,False)
+'		F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Product Line (High->Low)")
+'			F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uCopy!Product_Line,False)
+'		F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Product Line (Low->High)")
+'			F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uCopy!Product_Line,True)
+		F.Intrinsic.Control.ElseIf(V.Screen.Form2!ddlSort.Text,=,"Bin (Ascending)")
+			F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uCopy!BIN,False)
+		F.Intrinsic.Control.EndIf
+
+		V.Local.sFileData.Set("$!$$!$$!$$!$$!$$!$")
+		F.Intrinsic.Variable.UDTToString(V.uGlobal.uCopy,"Vendor_Name*!*Purchase_Year*!*PL*!*Bin*!*Description*!*Part*!*Serial_Number*!*Width_In*!*Length_In*!*Quantity*!*UM","$!$","*!*",V.Local.sRet)
+		F.Intrinsic.String.Concat(V.Local.sFileData,"$!$",V.Local.sRet,V.Local.sFileData)
+
+		F.Intrinsic.String.Concat(V.Caller.FilesDir,"\Templates\GCG_3599_Phys_Inv_template.xls",V.Local.sTemplate)
+		F.Intrinsic.String.Concat(V.System.Temp,"\GCG_3599_Physical_Inventory_Worksheet.xls",V.Local.sReportPath)
+		F.Intrinsic.File.Exists(V.Local.sReportPath,V.Local.bExists)
+		F.Intrinsic.Control.If(V.Local.bExists,=,True)
+			F.Intrinsic.File.DeleteFile(V.Local.sReportPath)
+		F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.EndIf
+
+	'write data to xls
+	F.Automation.MSExcel.WriteSpreadsheet(V.Local.sReportPath,V.Local.sTemplate,V.Local.sFileData)
+	F.Intrinsic.Task.ShellExec(V.Local.iHwnd,"OPEN",V.Local.sReportPath,"","",1)
+
+F.Intrinsic.Control.EndIf
+
+
+Program.Sub.PrintReport.End
+
+Program.Sub.AdditionalValues.Start
+
+V.Local.iFor.Declare(Long)
+V.Local.iForB.Declare(Long)
+V.Local.bIsNumeric.Declare(Boolean)
+V.Local.sRet.Declare(String)
+V.Local.sValue.Declare(String)
+
+F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uInvMain!USD_Total_Cost,"",V.uGlobal.uInvMain!USD_Total_Cost,0)
+
+F.Intrinsic.Control.If(V.uGlobal.uItemMstr!Part.UBound,<>,-1)
+	' individual lot/bin part information
+	F.Intrinsic.Control.For(V.Local.iFor,V.uGlobal.uItemMstr!Part.LBound,V.uGlobal.uItemMstr!Part.UBound,1)
+		' width (m) = width (in)/39.37008
+		F.Intrinsic.Math.Div(V.uGlobal.uItemMstr!Width_In,39.37008,V.uGlobal.uItemMstr(v.Local.iFor)!Width_m)
+		' length (m) = length (in)/39.37008
+		F.Intrinsic.Math.Div(V.uGlobal.uItemMstr!Length_In,39.37008,V.uGlobal.uItemMstr(v.Local.iFor)!Length_m)
+		' surface = total qty/10.76391
+		F.Intrinsic.Math.Div(V.uGlobal.uItemMstr(v.Local.iFor)!Quantity,10.76391,V.uGlobal.uItemMstr(v.Local.iFor)!Surface)
+		' individual Part Total Cost = Part Total Qty * USD Cost
+		F.Intrinsic.Math.Mult(V.uGlobal.uItemMstr(v.Local.iFor)!Quantity,V.uGlobal.uItemMstr(v.Local.iFor)!USD_Cost,V.uGlobal.uItemMstr(v.Local.iFor)!Total_Cost)
+		' cost sqm= cost * surface
+		F.Intrinsic.Math.Mult(V.uGlobal.uItemMstr(v.Local.iFor)!USD_Cost,V.uGlobal.uItemMstr(v.Local.iFor)!Surface,V.uGlobal.uItemMstr(v.Local.iFor)!USD_Cost_Sqm)
+		' total cost= Qty * cost
+		F.Intrinsic.Math.Mult(V.uGlobal.uItemMstr(v.Local.iFor)!Total_Qty,V.uGlobal.uItemMstr(v.Local.iFor)!USD_Cost,V.uGlobal.uItemMstr(v.Local.iFor)!USD_Total_Cost)
+	F.Intrinsic.Control.Next(V.Local.iFor)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.uGlobal.uInvMain!Part.UBound,<>,-1)
+	'part total information
+	F.Intrinsic.Control.For(V.Local.iFor,V.uGlobal.uInvMain!Part.LBound,V.uGlobal.uInvMain!Part.UBound,1)
+		' individual Part Total Cost = Part Total Qty * USD Cost
+		F.Intrinsic.Math.Mult(V.uGlobal.uInvMain(v.Local.iFor)!Qty_OnHand,V.uGlobal.uInvMain(v.Local.iFor)!Amt_Cost,V.uGlobal.uInvMain(v.Local.iFor)!Total_Cost)
+		' total cost= Qty * cost
+		F.Intrinsic.Math.Mult(V.uGlobal.uInvMain(v.Local.iFor)!Qty_OnHand,V.uGlobal.uInvMain(v.Local.iFor)!Amt_Cost,V.uGlobal.uInvMain(v.Local.iFor)!USD_Total_Cost)
+		' total qty=qty onhand
+		V.uGlobal.uInvMain(v.Local.iFor)!Total_Qty.Set(V.uGlobal.uInvMain(v.Local.iFor)!Qty_OnHand)
+
+		F.Intrinsic.String.Left(V.uGlobal.uInvMain(v.Local.iFor)!Product_Line,1,V.Local.sValue)
+		F.Intrinsic.Math.IsNumeric(V.Local.sValue,V.Local.bIsNumeric)
+		' Finished Goods Parts start with a numeric character
+		F.Intrinsic.Control.If(V.Local.bIsNumeric,=,True)
+			' Set the FG Total on Item Master records
+			F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uInvMain!Part,V.uGlobal.uInvMain(v.Local.iFor)!Part,V.uGlobal.uInvMain!FG_Dol,V.uGlobal.uInvMain(v.Local.iFor)!USD_Total_Cost)
+			F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uItemMstr!Part,V.uGlobal.uInvMain(v.Local.iFor)!Part,V.uGlobal.uItemMstr!FG_Dol,V.uGlobal.uInvMain(v.Local.iFor)!USD_Total_Cost)
+			F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uInvMain!Part,V.uGlobal.uInvMain(v.Local.iFor)!Part,V.uGlobal.uInvMain!Raw_Mat_Dol,0)
+			F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uItemMstr!Part,V.uGlobal.uInvMain(v.Local.iFor)!Part,V.uGlobal.uItemMstr!Raw_Mat_Dol,0)
+
+		' Raw Material Parts start with an alpha character
+		F.Intrinsic.Control.Else
+			' set the RM Total on the Item Master records
+			F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uInvMain!Part,V.uGlobal.uInvMain(v.Local.iFor)!Part,V.uGlobal.uInvMain!Raw_Mat_Dol,V.uGlobal.uInvMain(v.Local.iFor)!USD_Total_Cost)
+			F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uItemMstr!Part,V.uGlobal.uInvMain(v.Local.iFor)!Part,V.uGlobal.uItemMstr!Raw_Mat_Dol,V.uGlobal.uInvMain(v.Local.iFor)!USD_Total_Cost)
+			F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uInvMain!Part,V.uGlobal.uInvMain(v.Local.iFor)!Part,V.uGlobal.uInvMain!FG_Dol,0)
+			F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uItemMstr!Part,V.uGlobal.uInvMain(v.Local.iFor)!Part,V.uGlobal.uItemMstr!FG_Dol,0)
+
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iFor)
+F.Intrinsic.Control.EndIf
+
+Program.Sub.AdditionalValues.End
+
+Program.Sub.InitialValues.Start
+
+V.Local.ssel.Declare(String)
+V.Local.sBegDate.Declare(String)
+V.Local.sEndDate.Declare(String)
+V.Local.iFor.Declare(Long)
+V.Local.sValue.Declare(String)
+V.Local.sret.Declare(String)
+
+
+F.Intrinsic.String.Format(V.Screen.Form1!dtpBegDate.Value,"YYMMDD",V.Local.sBegDate)
+F.Intrinsic.String.Format(V.Screen.Form1!dtpEndDate.Value,"YYMMDD",V.Local.sEndDate)
+
+
+' get all Inventory master information
+V.uGlobal.uInvMain.Redim(-1,-1)
+F.ODBC.Connection!Con.OpenRecordsetRO("rstSel","select Part, Product_Line, Code_Sort, Description, UM_Inventory, Amt_Cost, Qty_OnHand from Inventory_Mstr order by Part")
+	F.Intrinsic.Control.If(V.ODBC.Con!rstSel.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("Con","rstSel","v.uGlobal.uInvMain",False)
+	F.Intrinsic.Control.EndIf
+F.ODBC.Con!rstSel.Close
+
+F.Intrinsic.Control.If(V.Screen.Form1!chkAllDte.Value,=,1)
+	F.ODBC.Connection!Con.OpenRecordsetRO("rstSel","select Part, Date_History,Receiver from Inventory_Hist where Code_Transaction ='P10'  order by Part")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Concat("select Part, Date_History,Receiver from Inventory_Hist where Code_Transaction ='P10' and Date_History between '",V.Local.sBegDate,"' and '",V.Local.sEndDate,"' order by Part",V.Local.ssel)
+	F.ODBC.Connection!Con.OpenRecordsetRO("rstSel",V.Local.ssel)
+F.Intrinsic.Control.endif
+	F.Intrinsic.Control.If(V.ODBC.Con!rstSel.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("Con","rstSel","v.uGlobal.uInvHist",False)
+	F.Intrinsic.Control.EndIf
+F.ODBC.Con!rstSel.Close
+
+F.Intrinsic.Control.CallSub(Exclude_data)
+
+' sort the history by date
+F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uInvHist!Date_History,True)
+' flag to delet duplicates.  for non-lot bin parts, just need most recent
+F.Intrinsic.Variable.UDTMultiFlagDuplicates(V.uGlobal.uInvHist!Part)
+F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uInvHist)
+' add history info to main, redim hist to make it easier to debug
+F.Intrinsic.Control.For(V.Local.iFor,V.uGlobal.uInvHist!Part.LBound,V.uGlobal.uInvHist!Part.UBound,1)
+	F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uInvMain!Part,V.uGlobal.uInvHist(v.Local.iFor)!Part,V.uGlobal.uInvMain!Receiver,V.uGlobal.uInvHist(v.Local.iFor)!Receiver)
+	F.Intrinsic.Variable.UDTMultiSeekSet(V.uGlobal.uInvMain!Part,V.uGlobal.uInvHist(v.Local.iFor)!Part,V.uGlobal.uInvMain!Purchase_Year,V.uGlobal.uInvHist(v.Local.iFor)!Date_History)
+F.Intrinsic.Control.Next(V.Local.iFor)
+V.uGlobal.uInvHist.Redim(-1,-1)
+'============================================================================================================================================
+
+F.Intrinsic.String.Format(V.Screen.Form1!dtpBegDate.Value,"YYYYMMDD",V.Local.sBegDate)
+F.Intrinsic.String.Format(V.Screen.Form1!dtpEndDate.Value,"YYYYMMDD",V.Local.sEndDate)
+
+' get all Item Master records
+V.uGlobal.uItemMstr.Redim(-1,-1)
+F.Intrinsic.Control.If(V.Screen.Form1!chkAllDte.Value,=,1)
+	F.ODBC.Connection!Con.OpenRecordsetRO("rstSel","select Part, Bin, Serial_Number, PO_Number,PO_Line_No, Quantity from Item_Master order by Part, Serial_Number")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Concat("select Part, Bin, Serial_Number, PO_Number,PO_Line_No, Quantity from Item_Master  where Date_Last_Rec between'",V.Local.sBegDate,"' and '",V.Local.sEndDate,"' order by Part, Serial_Number",V.Local.ssel)
+	F.ODBC.Connection!Con.OpenRecordsetRO("rstSel",V.Local.ssel)
+F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.If(V.ODBC.Con!rstSel.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("Con","rstSel","v.uGlobal.uItemMstr",False)
+	F.Intrinsic.Control.EndIf
+F.ODBC.Con!rstSel.Close
+'============================================================================================================================================
+
+' get all Atg_Itmst_Mstr_Len_Width information
+V.uGlobal.uItemLW.Redim(-1,-1)
+F.ODBC.Connection!Con.OpenRecordsetRO("rstSel","select Part, Serial, Length, Width from ATG_Itmst_Len_Width order by Part, Serial")
+	F.Intrinsic.Control.If(V.ODBC.Con!rstSel.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("Con","rstSel","v.uGlobal.uItemLW",False)
+	F.Intrinsic.Control.EndIf
+F.ODBC.Con!rstSel.Close
+
+'============================================================================================================================================
+' get GL detail information
+V.uGlobal.uGlDTl.Redim(-1,-1)
+F.Intrinsic.Control.If(V.Screen.Form1!chkAllDte.Value,=,1)
+	F.Intrinsic.String.Concat("select left(Post_Date,4) as Post_Date, PO_Number,PO_Line, Invoice_No, Vendor,Receiver  from Gl_Detail where  PO_Number<>'' and Receiver<>'' and Tran_Type='04' order by PO_Number","",V.Local.ssel)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Concat("select left(Post_Date,4) as Post_Date, PO_Number,PO_Line, Invoice_No, Vendor,Receiver from Gl_Detail where Post_Date between'",V.Local.sBegDate,"' and '",V.Local.sEndDate,"' and PO_Number<>'' and Receiver<>'' and Tran_Type='04'  order by PO_Number",V.Local.ssel)
+F.Intrinsic.Control.EndIf
+F.ODBC.Connection!Con.OpenRecordsetRO("rstSel",V.Local.ssel)
+	F.Intrinsic.Control.If(V.ODBC.Con!rstSel.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("Con","rstSel","v.uGlobal.uGLDtl",False)
+	F.Intrinsic.Control.EndIf
+F.ODBC.Con!rstSel.Close
+'============================================================================================================================================
+
+' get Vendor name
+V.uGlobal.uAvend.Redim(-1,-1)
+F.ODBC.Connection!Con.OpenRecordsetRO("rstSel","select Vendor, Name_Vendor from Vendor_Master where Rec='1' ")
+	F.Intrinsic.Control.If(V.ODBC.Con!rstSel.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("Con","rstSel","v.uGlobal.uAvend",False)
+	F.Intrinsic.Control.EndIf
+F.ODBC.Con!rstSel.Close
+'============================================================================================================================================
+
+' some values will have been loaded to user fields.  need to get those
+V.uGlobal.uUser.Redim(-1,-1)
+F.Intrinsic.Control.If(V.Screen.Form1!txtBegPart.Text,<>,"ALL")
+	F.Intrinsic.String.Concat("select Part, User_Field_1,User_Field_2,User_Field_3, User_Field_4, User_Field_5,Serial_Number from Item_Master where User_Field_1<>'' and Part between '",V.Screen.Form1!txtBegPart.Text,"' and '",V.Screen.Form1!txtEndPart.Text,"'",V.Local.ssel)
+	F.ODBC.Connection!Con.OpenRecordsetRO("rstsel",V.Local.ssel)
+F.Intrinsic.Control.Else
+	F.ODBC.Connection!Con.OpenRecordsetRO("rstSel","select Part, User_Field_1,User_Field_2,User_Field_3, User_Field_4, User_Field_5,Serial_Number from Item_Master where User_Field_1<>''")
+F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.If(V.ODBC.Con!rstSel.EOF,=,False)
+		F.Intrinsic.Variable.LoadUDTFromRecordset("Con","rstSel","v.uGlobal.uUser",False)
+	F.Intrinsic.Control.EndIf
+F.ODBC.Con!rstSel.Close
+
+' get the Vendor ID from the name in the user fields
+F.Intrinsic.Control.If(V.uGlobal.uUser!User_Field_1.UBound,<>,-1)
+	F.Intrinsic.Control.For(V.Local.iFor,V.uGlobal.uUser!User_Field_1.LBound,V.uGlobal.uUser!User_Field_1.UBound,1)
+'		F.Intrinsic.String.Concat(V.uGlobal.uUser(v.Local.iFor)!User_Field_1,V.uGlobal.uUser(v.Local.iFor)!User_Field_2,V.uGlobal.uUser(v.Local.iFor)!User_Field_3,V.Local.sValue)
+		F.Intrinsic.String.Concat("LIKE::",V.uGlobal.uUser(v.Local.iFor)!User_Field_1,"*",V.Local.sValue)
+		F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uAvend!Name_Vendor,V.Local.sValue.Trim,V.Local.sret)
+		F.Intrinsic.Control.If(V.Local.sret,<>,"")
+			F.Intrinsic.String.Split(V.Local.sret,"*!*",V.Local.sret)
+			V.uGlobal.uUser(v.Local.iFor)!Vendor.Set(V.uGlobal.uAvend(v.Local.sret(0))!Vendor)
+			V.uGlobal.uUser(v.Local.iFor)!Name.Set(V.uGlobal.uAvend(v.Local.sret(0))!Name_Vendor)
+		F.Intrinsic.Control.EndIf
+'get the PO from the GL_Detail
+		F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uGlDTl!Invoice,V.uGlobal.uUser(v.Local.iFor)!User_Field_5,V.Local.sret)
+		F.Intrinsic.Control.If(V.Local.sret,<>,"")
+			F.Intrinsic.String.Split(V.Local.sret,"*!*",V.Local.sret)
+			V.uGlobal.uUser(v.Local.iFor)!PO.Set(V.uGlobal.uGlDTl(v.Local.sret(0))!PO_Number)
+			V.uGlobal.uUser(v.Local.iFor)!PO_Line.Set(V.uGlobal.uGlDTl(v.Local.sret(0))!PO_Line)
+		F.Intrinsic.Control.endif
+	F.Intrinsic.Control.Next(V.Local.iFor)
+F.Intrinsic.Control.EndIf
+
+Program.Sub.InitialValues.End
+
+Program.Sub.Exclude_Data.Start
+
+
+
+V.Local.iFor.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.sValue.Declare(String)
+
+' start by removing records starting with the largest groups of data that can be eliminated
+' 1. entire PL's or part ranges
+'===============================================
+' exclude WIH=exclude parts with WIH in the part#
+F.Intrinsic.Control.If(V.Screen.Form1!chkExWIH.Value,=,1)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uItemMstr!Part,"LIKE::*WIH*")
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uInvMain!Part,"LIKE::*WIH*")
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uInvHist!Part,"LIKE::*WIH*")
+F.Intrinsic.Control.EndIf
+' exclude CC=exclude parts with CC in the part#
+F.Intrinsic.Control.If(V.Screen.Form1!chkExCC.Value,=,1)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uItemMstr!Part,"LIKE::*CC*")
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uInvMain!Part,"LIKE::*CC*")
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uInvHist!Part,"LIKE::*CC*")
+F.Intrinsic.Control.EndIf
+
+' 2. anything outside the entered ranges
+'=========PART======================================
+' if a part range was selected,
+F.Intrinsic.Control.If(V.Screen.Form1!txtBegPart.Text,<>,"ALL")
+	' if the selection was by part
+	F.Intrinsic.Control.If(V.Screen.Form1!optPart.Value,=,True)
+		F.Intrinsic.String.Concat("<::",V.Screen.Form1!txtBegPart.Text,V.Local.sValue)
+		F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uInvMain!Part,V.Local.sValue)
+		F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uInvHist!Part,V.Local.sValue)
+		F.Intrinsic.String.Concat(">::",V.Screen.Form1!txtEndPart.Text,V.Local.sValue)
+		F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uInvMain!Part,V.Local.sValue)
+		F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uInvHist!Part,V.Local.sValue)
+	' if the selection was by description
+	F.Intrinsic.Control.Elseif(V.Screen.Form1!optDescr.Value,=,True)
+		F.Intrinsic.String.Concat("<::",V.Screen.Form1!txtBegPart.Text,V.Local.sValue)
+		F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uInvMain!Description,V.Local.sValue)
+		F.Intrinsic.String.Concat(">::",V.Screen.Form1!txtEndPart.Text,V.Local.sValue)
+		F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uInvMain!Description,V.Local.sValue)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+'=========PL======================================
+' exclude Z=exclude parts with PL starting with Z
+F.Intrinsic.Control.If(V.Screen.Form1!chkExZ.Value,=,True)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uInvMain!Product_Line,"LIKE::Z*")
+F.Intrinsic.Control.EndIf
+
+' if Part Range entered
+
+' if PL range entered
+F.Intrinsic.Control.If(V.Screen.Form1!txtBegPL.Text,<>,"ALL")
+	F.Intrinsic.String.Concat("<::",V.Screen.Form1!txtBegPL.Text,V.Local.sValue)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uInvMain!Product_Line,V.Local.sValue)
+	F.Intrinsic.String.Concat(">::",V.Screen.Form1!txtEndPL.Text,V.Local.sValue)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uInvMain!Product_Line,V.Local.sValue)
+F.Intrinsic.Control.EndIf
+
+'=========SORT CODE======================================
+' if a Sort Code range was wntered
+F.Intrinsic.Control.If(V.Screen.Form1!txtBegSort.Text,<>,"ALL")
+	F.Intrinsic.String.Concat("<::",V.Screen.Form1!txtBegSort.Text,V.Local.sValue)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uInvMain!Code_Sort,V.Local.sValue)
+	F.Intrinsic.String.Concat(">::",V.Screen.Form1!txtEndSort.Text,V.Local.sValue)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uInvMain!Code_Sort,V.Local.sValue)
+F.Intrinsic.Control.EndIf
+
+' delete all flagged InvMain parts
+F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uInvMain)
+
+Program.Sub.Exclude_Data.End
+
+Program.Sub.Comments.Start
+${$0$}$GCG_Inventory_Reports$}$JCT$}$8/31/2012
+${$3$}$0$}$$}$-1$}$-1$}$$}$1/1/1900$}$For GKD
+Custom Hook/Ment Utem
+Program.Sub.Comments.End
+
